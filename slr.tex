@@ -1,0 +1,76 @@
+\documentclass[11pt,a4paper,openany]{article}
+
+% Review these, could probably remove \slrMadeBy
+\newcommand{\slrTitle}{Structured Literature Review}
+\newcommand{\slrSubtitle}{Something something Starcraft}
+\newcommand{\slrMadeby}{A bunch of people}
+\newcommand{\slrDate}{November 2011}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+% Tweak as necessary
+\usepackage[top=1.25in,bottom=1in,left=1.25in,right=1in]{geometry}
+
+% Choose one...
+% \usepackage{cite} % For citations/bibliography
+\usepackage{natbib} % Anders prefers this one
+
+% Citation format
+\bibliographystyle{apalike}
+\bibpunct{[}{]}{;}{a}{,}{,}
+
+% font selection
+%\usepackage{palatino}
+\usepackage{charter}
+%\usepackage{bookman}
+%\usepackage{helvet}
+%\usepackage{newcent}
+%\usepackage{utopia}
+
+\newcommand{\Hline}{\rule{\linewidth}{0.3mm} \\}
+
+% Don't indent paragraphs, use newline instead
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{\baselineskip}
+
+\begin{document}
+
+% FWONT PAGE GOES HEWE.
+\begin{titlepage}
+\center
+\large \textbf{\slrMadeby}
+
+\vspace{3cm}
+\Hline
+\Huge \textsc{\slrTitle}
+\vspace{2cm}
+\huge \\ \textsc{\slrSubtitle}
+\Hline
+\vfill
+\normalsize \slrDate
+
+\end{titlepage}
+% END FWONT PAGE.
+
+\section{Introduction}
+\input{sections/introduction}
+
+\section{Structured Literature Review}
+\input{sections/about_slr}
+
+\section{Protocol and Procedure}
+\input{sections/protocol}
+
+\section{Search Engines and Search Strings}
+\input{sections/search_engines}
+
+\section{Search Results}
+\input{sections/search_results}
+
+\label{biblio}
+% Expects bib to be in bib/bib.bib
+\bibliography{bib/bib} 
+
+\end{document}
