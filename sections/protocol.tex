@@ -1,1 +1,148 @@
 % Protocol and Procedure goes here.
+\subsection{Search term}
+\label{sub:search_term}
+
+Deciding the search terms was a process that went through several stages of experimentation. Initially we came up with a lot of terms that turned out to match too many articles that were irrelevant, and it was difficult to adjust the terms in order to exclude most of those without excluding actually relevant articles. Additionally there was some confusion about the research questions that made the terms hard to determine.
+
+After the research questions were clarified, a brain-storming session was done. We started listing all the words and expressions we could think of that were related to our research questions, such as real-time, artificial intelligence and software architecture. After the whiteboard was filled with words, we started grouping related terms, and we were able to decide on good groups to include in our search. Some of the terms were far too inclusive; it quickly became apparent that using terms such as real-time gave us excessive amounts of unrelated matches. In this case real-time strategy turned out to be a better fit.
+
+We also decided to avoid specific techniques like neural networks or case based reasoning in our search terms for several reasons, most notably that we couldn’t possibly know of all relevant techniques up front and we did not have a good understanding of how the choice of technique would affect architectural decisions. Eventually, we landed on the following grous of search terms:
+
+\begin{itemize}
+
+\item Group 1: architecture, design
+\item Group 2: agent, bot, robot
+\item Group 3: scheduling, resource allocation, task assignment, planning
+\item Group 4: real-time strategy, strategy game, first-person shooter
+\item Group 5: modular, loosely coupled, loose coupling, high cohesion
+\item Group 6: artificial intelligence, game ai
+
+\end{itemize}
+This gives us the following search  string:
+\texttt{%Maybe use listing or something for this
+(architecture OR design)
+AND (agent OR bot OR robot)
+AND (scheduling OR “resource allocation” OR “task assignment” OR planning)
+AND (“real-time strategy” OR “strategy game” OR “first-person shooter”)
+AND (modular OR “loosely coupled” OR “loose coupling” OR “high cohesion”)
+AND (“artificial intelligence” OR “game ai”)
+}
+We had received a list of recommended search engines from our supervisors, and each person was given the responsibility of performing the search using one of the search engines. As it turned out, not all the search engines were all to happy about our long search string, and some adaptiation had to be done in many cases.
+
+\subsection{How we decided P and C}
+\label{sub:how_we_decided_p_and_c}
+In order to carry out a structured literature review it is vital to decide on the problem to be solved, referred to as P, and the constraints used to guide the search, referred to as C.
+
+The initial problem formulation was based on the assignment given by our supervisor, to find the best way to design a modular agent for playing the real time strategy game Starcraft.  
+
+\textbf{P:} What software architecture and design is best suited for an RTS-bot?
+
+\textbf{C:}
+\begin{itemize}
+\item Domain: Starcraft BroodWars
+\item API: BWapi
+\item system must be modular	
+\end{itemize}
+
+The initial formulation was seen by some as to restrictive as it constrained the search to the area of real time strategy games. It was argued that a good architecture could be found in other ares. There was also some concerns that the initial formulation of P would constrain the search and there were differing opinions about the exact task to be performed. We debated these concerns and eventually came to agree on the following P and C.
+
+\textbf{P:} What agent architecture can be used in a real-time strategy game?
+
+\textbf{C:} Modularity
+
+\subsection{Research Questions}
+\label{sub:research_questions}
+When writing a structured literature review we need some goals that we want to answer based on our problem and constraints. Our main goal is to do background research on out problem so What are the existing solutions to P is a natural first question that needs to be answered. But just knowing the existing solutions isn’t enough, we also need to know how the different solutions compare to each other based on our constraints. Having this gives up a good overview over the research that has been done on the problem. 
+
+In order to evaluate what solutions we should use of build on, it is also important to know the quality of the current solutions. We need to know the strength of the evidence presented in the literature, and what implications this brings for our solution.
+
+This gave us four main research questions:
+\begin{itemize}
+\item What are the existing solutions to P?
+\item How do the different solutions compare to each other with respect to C?
+\item What is the strength of the evidence in support of the different solutions?
+\item What implications will these findings have when creating the solution (S) to P?
+\end{itemize}
+
+\subsection{Inclusion Criteria}
+\label{sub:inclusion_criteria}
+To ensure a level of relevance of our very first pool of articles, we needed to decide some inclusion criterion's that could quickly exclude some search results. And information needed to check the criteria should be minimal, meaning that members of the group should be able to quickly read the abstract, introduction or conclusion and have the understanding needed to pass or include a given article.
+
+The obvious first criteria, given P, was that an article had to explicitly mention an architecture, framework or design in the abstract, and that it had to be related to agents and/or AI. Later we relaxed this requirement so that articles can still get included if they give strong hints to an architecture, for instance in section headings, even though they don’t mention the actual words in the abstract.
+Since our domain is highly dependant on time-constraints and efficiency we added that the design mentioned should be applicable to real-time. This allowed us to narrow the scope even further without much added time consumption on the screening.
+
+For the full text screening the article pool was divided equally between the members. The full text screening was done in parallel with the quality scoring process, meaning the same person reading an article would also be keeping notation on the article quality. 
+We found that many articles that passed the first screening, would fail to pass the requirements when reading it more thoroughly, such articles were marked as irrelevant, and archived.
+
+After reading through a few articles we found that we still had an excessive amount of irrelevant articles, which would be tedious for the others to go through and provide no relevant information for the report. Thus we decided to exclude all articles that did no provide a satisfactory description of a relevant architecture.
+
+\subsection{Scoring criteria}
+\label{sub:scoring_criteria}
+Initially, one member made a suggestion for what quality criteria we could use. This was mostly based on the criteria that were presented in a paper from our supervisor, and some intuition. The list then looked like this:
+\begin{itemize}
+\item Well written
+\item How relevant is it?
+\item Amount of citation/self citation (lack thereof)
+\item Who wrote it?
+\item Where was it published?
+\item Is there is a clear statement of the aim of the research?
+\item Is the study is put into context of other studies and research?
+\item Are system or algorithmic design decisions justified?
+\item Is the test data set reproducible?
+\item Is the study algorithm reproducible?
+\item Is the experimental procedure thoroughly explained and reproducible?
+\item Is it clearly stated in the study which other algorithms the study’s algorithm(s) have been compared with?
+\item Are the performance metrics used in the study explained and justified?
+\item Are the test results thoroughly analysed?
+\item Does the test evidence support the findings presented?
+\end{itemize}
+
+These were presented to the entire group later, and we had a discussion of each point, and additional input was given. Some points were combined as they addressed similar points, some were removed as we did not see them as very relevant, and a few points were added. Here are the results:
+\begin{itemize}
+\item How relevant is it?
+\begin{itemize}
+\item Does it define an architecture or design?
+\item Is it used in our domain (RTS AI)?
+\item Is it used in a modular way?
+\end{itemize}
+\item Amount/quality of citation 
+\item Is there is a clear statement of the aim of the research?
+\item Is the study put into context of other studies and research?
+\item Is the experimental procedure thoroughly explained and reproducible?
+\item Does the test evidence support the findings presented?
+\item Published in last 10 years?
+\item Has the architecture been implemented (and published)?
+\end{itemize}
+
+Each point was given a score, with the granularity 0 (no), $\frac{1}{2}$ (partly), and 1 (yes). We used this scoring for some time, but there was a growing problem with irrelevant articles getting high scores (7 and up). On a further review of the SLR method, we noticed that we had skipped a step in the procedure. We had not used a fulltext screening of the text, based on our inclusion criteria. We then changed the criteria to reflect fulltext screening:
+
+\textbf{Secondary inclusion criterion (full text screening)}
+\begin{itemize}
+\item Does it define an architecture or design that could potentially be applied to our domain?
+\end{itemize}
+
+\textbf{Bonus criteria}
+\begin{itemize}
+\item Is it used in our domain (RTS AI)?
+\item Is it used in a modular way?
+\end{itemize}
+
+\textbf{Quality criteria}
+\begin{itemize}
+\item Amount/quality of citation ($<$ $\frac{1}{3}$  self-citation and $>$ 10 citations).
+\item Is there is a clear statement of the aim of the research?
+\item Is the study put into context of other studies and research?
+\item Is the experimental procedure thoroughly explained and reproducible?
+\item Does the test/empirical evidence support the findings presented?
+\item Published in last 10 years?
+\item Has the architecture been implemented (and published)?
+\end{itemize}
+
+If an article got 0 points on the secondary inclusion criterion (is it an architecture), we would not score it, and check it as irrelevant for our search. If it got $\frac{1}{2}$  or 1 it passed. To address the problem of high scoring articles with little relevance, we added a weighting to the first 3 criteria (inclusion and bonus criteria). The 3 first criteria had 50\% of the total weight, and the 7 last (quality criteria) got the remaining 50\%. This improved our scoring table, and this is the final scoring we decided to use.
+
+During this scoring process we also had a calibration, that is, everyone tried scoring 2 articles, and we compared the results afterwards. It was noted that most of the members had similar scoring, but a few gave them lower score then the rest, mostly concerning whether it defined an architecture or not.. We had a discussion regarding this, and we agreed that while an article can define an architecture, it has to be applicable to our domain in order to get a score. This is reflected in the third round of quality criteria, where we changed the first one to:
+\begin{itemize}
+\item Does it define an architecture or design that could potentially be applied to our domain?
+\end{itemize}
+
+This made us evaluate the article better, decide if it could be used in our application.

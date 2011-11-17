@@ -1,1 +1,153 @@
 % Search Engines and Search Strings here
+\subsection{Web of Knowledge}
+\label{sub:web_of_knowledge}
+This engine doesn’t give web pages, but instead let us read abstract and find superficial information about an article. When an interesting article was found, we used google to find the result. After searching, it was noted that there was a button that allowed direct download in most cases though. Searching here got many results initially, but when we tweaked the search terms a bit, we got much more satisfying results. The biggest change was removing RTS and AI (replaced with real time strategy and artificial intelligence), which reduced our hits to less than 1000. One thing to note is that one had to specify which part of an article you wanted to search in (Title, Topic, Author, Publication name), seemingly without an all text option. We used Title, Topic and Publication name, which yielded a fair bit of results. We also used computer science, robotics and automation control systems as filters, because we got many irrelevant biology hits, and sorted on times cited. Later searches tried to specialise a bit more. Not all results were downloaded, as we did some rough filtering (reading abstract).
+
+\textbf{Search strings used:}
+\begin{itemize}
+\item String 1:
+\begin{itemize}
+\item (architecture OR design) AND (agent OR bot OR artificial OR intelligence OR robot) AND (strategy game OR real time OR first person shooter) AND (planning OR scheduling OR resource allocation OR task assignment)
+\item Number of results: 656 
+\item Date of search: 22.09.2011
+\end{itemize}
+\item String 2:
+\begin{itemize}
+\item (architecture OR design) AND (agent OR bot OR artificial OR intelligence OR robot) AND (strategy game OR real time strategy OR first person shooter) AND (planning OR scheduling OR resource allocation OR task assignment)
+\item Number of results: 113
+\item Date of search: 27.09.2011
+\end{itemize}
+\item String 3:
+\begin{itemize}
+\item (architecture OR design) AND (agent OR bot OR artificial intelligence OR robot) AND (strategy game OR real time strategy OR first person shooter) AND (planning OR scheduling OR real time strategy)
+\item Number of results: 168
+\item Date of search: 28.09.2011
+\end{itemize}
+\end{itemize}
+
+\subsection{ScienceDirect}
+\label{sub:sciencedirect}
+ScienceDirect is an aggregator of articles and other sources for a wide range of domains, including finances and medicine, as well as computer science.  Due to this, we got a large amount of results.  Some were applicable, but to many came from other disciplines.  We attempted to change our search terms somewhat, with little luck.  In our final search, we added the constraint that only computer science sources should be used, despite the fact that we might miss some interesting results from fields such as robotics.  As a final note, some sources were not free, and have been left out of the results reported here.
+
+\textbf{Search strings used:}
+\begin{itemize}
+\item String 1:
+\begin{itemize}
+\item (architecture OR design) AND (agent OR bot OR robot OR "artificial intelligence") AND (scheduling OR "resource allocation" OR "task assignment" OR planning)  AND ("realtime strategy" OR "strategic game" OR "first-person shooter")
+\item Number of results: 158
+\item Date of search: 26/9-2011
+\end{itemize}
+\item String 2:
+\begin{itemize}
+\item (architecture OR design) AND (agent OR bot OR robot OR "artificial intelligence") AND (scheduling OR "resource allocation" OR "task assignment" OR planning) AND ("real-time strategy" OR "strategic game" OR "first-person shooter") [All Sources(Computer Science)]
+\item Number of results: 59
+\item Date of search: 26/9-2011
+\end{itemize}
+\end{itemize}
+
+\subsection{Wiley Inter Science}
+\label{sub:wiley_inter_science}
+Using the full search term in this search engine produced a very high amount of search results, and all of those we looked at were irrelevant to our problem domain. Therefore we had to remove some of the search terms which produced the irrelevant results. After a few searches we narrowed down to the most relevant terms, and got a good amount of relevant search results. The resulting search string can be seen above. After looking through these first results we played a little with search terms. We started with removing some search terms inside ANDs and removing entire parts of the search string, but without any good results. Then after trying each search term alone we got good results with just searching for “real time strategy”.
+
+\textbf{Search strings used:}
+\begin{itemize}
+\item String 1:
+\begin{itemize}
+\item Search string:  “(architecture OR design) AND (scheduling OR "resource allocation" OR planning) AND ("strategy game" OR "first person shooter")“ in All Fields
+\item Number of results: 210
+\item Date of search: 25/9-2011
+\end{itemize}
+\item String 2:
+\begin{itemize}
+\item Search string: “real time strategy”
+\item Number of results: 88
+\item Date of search: 29/9-2011
+\end{itemize}
+\end{itemize}
+
+\subsection{Springerlink}
+\label{sub:springerlink}
+The search engine restricts the number of terms in the boolean expression used as a search string, therefore it was necessary cut certain terms from the search string this was done by excluding the most general terms like AI. this resulted in not only a string short enough to be parsed by the search engine but one that returned a manageable number of results. A filters were used to further narrow down the results to only those that were applicable to the domain of artificial intelligence. 
+\textbf{Search strings used:}
+\begin{itemize}
+\item String 1:
+\begin{itemize}
+\item “(architecture or design) and (agent or bot or robot) and (Scheduling or Planning) and (real time strategy or first person shooter)” 
+\item with filters “Computer Science” and “Artificial Intelligence (incl. Robotics)
+\item Number of results: 67
+\item Date of search: 23/9-2011
+\end{itemize}
+\end{itemize}
+
+\subsection{ACM Digital Library}
+\label{sub:acm_digital_library}
+The search string was largely unmodified, with the exception of “robot” which was excluded to produce less and more relevant results. Because the engine supported terms built from more than one word, excluding words like “game” or “resource” was deemed unnecessary. The major drawback with this search engine was that it also listed several meta-hits, which was basically collections of papers and articles that had been published together. A meta-hit would appear with only one match within its collection. This resulted in a hit-count that is lower than the actual number of papers found. Each meta-hit had to be post-processed in order to find which parts that would be relevant for the problem at hand. As a note, to search with the specified string one had to first do a search with an empty string and then do a search within that result set. This is because ACM Digital Library did not support a mix of ANDs and ORs in its initial input field.
+
+\textbf{Search strings used:}
+\begin{itemize}
+\item String 1:
+\begin{itemize}
+\item (("architecture" OR "design") AND ("agent" OR "bot") AND ("scheduling" OR "planning" OR "resource allocation" OR "task assignment") AND ("real time strategy" OR "strategy game" OR "shooter") AND "artificial intelligence")
+\item Number of results: 75
+\item Date of search: 27/9-2011
+\end{itemize}
+\end{itemize}
+
+\subsection{CiteSeer}
+\label{sub:citeseer}
+On Citeseer we had to add an extra element to the search string on order to make it do a full text search and not just a limited search of titles, abstracts and such. So the element text:() was added around the search string. The search string it self was not modified a lot, we moved “artificial intelligence” from group 6 to group 2, and dropped group 6 because “game ai” limited our search space to much and we did not get any good results.  With a result of 64 articles no more search string changes was needed to limit the results. 
+The search engine displayed abstracts for the resulting articles so inclusion criteria could be evaluated directly while viewing the results. It also showed citations in the results for each paper, so papers could be evaluated based on number of citations and citation sources. 
+
+\textbf{Search strings used:}
+\begin{itemize}
+\item String 1:
+\begin{itemize}
+\item text:((architecture OR design) AND (agent OR bot OR "artificial intelligence" OR robot) AND (scheduling OR "resource allocation" OR "task assignment" OR planning) AND ("real time strategy" OR "strategy game" OR "first person shooter") AND (modular OR "loose coupling" OR "high cohesion"))
+\item Number of results: 64
+\item Date of search: 28/9-2011
+\end{itemize}
+\end{itemize}
+
+\subsection{IEEE Xplore}
+\label{sub:ieee_xplore}
+\textbf{Search strings used:}
+\begin{itemize}
+\item String 1:
+\begin{itemize}
+\item ((("architecture" OR "design") AND ("agent" OR "bot") AND ("scheduling" OR "planning" OR "resource allocation" OR "task assignment") AND ("real time strategy" OR "strategy game" OR "shooter") AND "artificial intelligence"))
+\item Number of results: 
+\item Date of search: 28.09.2011
+\end{itemize}
+\end{itemize}
+
+\subsection{Google Scholar}
+\label{sub:google_scholar}
+Google Scholar returns an array of academic and scientific sources for articles and papers that match the search string. Consequently quite a few of the search results we got from Google Scholar we had already gotten from some of the aforementioned search engines. However, there were also many fresh results. Note that all the following search strings could have been combined into one. Unfortunately the resulting search string was too long for Google Scholar to handle.
+
+\textbf{Search strings used:}
+\begin{itemize}
+\item String 1:
+\begin{itemize}
+\item (architecture OR design) AND (agent OR bot OR robot) AND (scheduling OR "resource allocation" OR "task assignment" OR planning) AND ("real-time strategy" OR "strategy game" OR "first-person shooter") AND "artificial intelligence" AND "modular"
+\item Number of results: 268
+\item Date of search: 28.09.2011
+\end{itemize}
+\item String 2:
+\begin{itemize}
+\item (architecture OR design) AND (agent OR bot OR robot) AND (scheduling OR "resource allocation" OR "task assignment" OR planning) AND ("real-time strategy" OR "strategy game" OR "first-person shooter") AND "artificial intelligence" AND "loosely coupled"
+\item Number of results: 28
+\item Date of search: 05.10.2011
+\end{itemize}
+\item String 3:
+\begin{itemize}
+\item (architecture OR design) AND (agent OR bot OR robot) AND (scheduling OR "resource allocation" OR "task assignment" OR planning) AND ("real-time strategy" OR "strategy game" OR "first-person shooter") AND "artificial intelligence" AND "loose coupling"
+\item Number of results: 11
+\item Date of search: 05.10.2011
+\end{itemize}
+\item String 4:
+\begin{itemize}
+\item (architecture OR design) AND (agent OR bot OR robot) AND (scheduling OR "resource allocation" OR "task assignment"  OR planning) AND ("real-time strategy" OR "strategy game" OR "first-person shooter") AND "artificial intelligence" AND "high cohesion"
+\item Number of results: 3
+\item Date of search: 05.10.2011
+\end{itemize}
+\end{itemize}
